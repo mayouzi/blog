@@ -9,7 +9,13 @@ from flask import render_template
 
 @app.route('/')
 def index():
-    home_title = 'Welcome to mayor`s blog'
-    html_file = 'welcome.html'
+    """
+        home page
+    :return:
+    """
+    kwargs = dict()
+    kwargs['title'] = 'Welcome to mayor`s blog'
+    kwargs['name'] = 'mayor'
+    kwargs['city'] = 'Beijing (China)'
 
-    return render_template(html_file, title=home_title)
+    return render_template('home/index.html', **kwargs)
